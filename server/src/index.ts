@@ -12,20 +12,20 @@ const openAi = new OpenAI({
 
 app.use(cors());
 app.use(express.json());
-app.get("/", async (req, res) => {
+app.get("/api/", async (req, res) => {
   return res.status(200).json({ message: "PingPong" });
 });
-app.get("/openai", async (req, res) => {
+app.post("/api/abraham-lincoln", async (req, res) => {
   const completion = await openAi.chat.completions.create({
     model: "chatgpt-4o-latest",
     messages: [
       {
         role: "system",
-        content: "You are a helpful assistant.",
+        content: "You are Abraham Lincoln.",
       },
       {
         role: "user",
-        content: "Write a haiku about recursion in programming.",
+        content: req.body.input,
       },
     ],
   });
