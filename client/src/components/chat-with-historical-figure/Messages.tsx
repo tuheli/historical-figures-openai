@@ -16,17 +16,14 @@ export const Messages = () => {
       {figure?.messages.map((message) => {
         const isFromMe = message.sender === "me";
 
-        return (
-          <>
-            {isFromMe && <MessageFromMe key={message.id} message={message} />}
-            {!isFromMe && (
-              <MessageFromOther
-                key={message.id}
-                message={message}
-                historicalFigure={figure}
-              />
-            )}
-          </>
+        return isFromMe ? (
+          <MessageFromMe key={message.id} message={message} />
+        ) : (
+          <MessageFromOther
+            key={message.id}
+            message={message}
+            historicalFigure={figure}
+          />
         );
       })}
     </Stack>
