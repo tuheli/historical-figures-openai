@@ -1,20 +1,34 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
+import { MessageFromMe } from "./MessageFromMe";
+import { MessageFromOther } from "./MessageFromOther";
+import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
 
 export const Messages = () => {
+  const figure = useHistoricalFigure();
+
   return (
-    <>
-      <Stack
-        sx={{
-          bgcolor: "grey",
-          flexDirection: "row",
-          alignItems: "center",
-          gap: 2,
-          width: 340,
-        }}
-      >
-        <Box component="img" src="logoipsum-296.svg" />
-        <Typography variant="h5">Messages</Typography>
-      </Stack>
-    </>
+    <Stack
+      sx={{
+        flex: 1,
+        gap: 1,
+      }}
+    >
+      {figure?.messages.map((message) => {
+        const isFromMe = message.sender === "me";
+
+        return (
+          <>
+            {isFromMe && <MessageFromMe key={message.id} message={message} />}
+            {!isFromMe && (
+              <MessageFromOther
+                key={message.id}
+                message={message}
+                historicalFigure={figure}
+              />
+            )}
+          </>
+        );
+      })}
+    </Stack>
   );
 };
