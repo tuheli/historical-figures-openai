@@ -14,20 +14,20 @@ const historicalFiguresData: HistoricalFigure[] = [
     title: "President",
     imageUrl: "abraham-lincoln.png",
     messages: [
-      {
-        id: "1",
-        sender: "me",
-        content:
-          "Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you?",
-        date: new Date().toLocaleString(),
-      },
-      {
-        id: "2",
-        sender: "1",
-        content:
-          "Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. ",
-        date: new Date().toLocaleString(),
-      },
+      // {
+      //   id: "1",
+      //   sender: "me",
+      //   content:
+      //     "Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you?",
+      //   date: new Date().toLocaleString(),
+      // },
+      // {
+      //   id: "2",
+      //   sender: "1",
+      //   content:
+      //     "Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. ",
+      //   date: new Date().toLocaleString(),
+      // },
     ],
   },
   {
