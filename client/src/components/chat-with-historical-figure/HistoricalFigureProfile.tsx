@@ -1,10 +1,8 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
-import { useAppSelector } from "../../app/hooks";
+import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
 
 export const HistoricalFigureProfile = () => {
-  const state = useAppSelector(
-    (state) => state.historicalFigure.selectedHistoricalFigure
-  );
+  const figure = useHistoricalFigure();
 
   return (
     <>
@@ -24,11 +22,11 @@ export const HistoricalFigureProfile = () => {
         >
           <Box
             component="img"
-            src={state?.imageUrl}
+            src={figure?.imageUrl}
             sx={{
-              width: 60,
-              height: 60,
-              borderRadius: 30,
+              width: 50,
+              height: 50,
+              borderRadius: 25,
             }}
           />
           <Stack
@@ -42,7 +40,7 @@ export const HistoricalFigureProfile = () => {
                 fontWeight: 500,
               }}
             >
-              {state?.name}
+              {figure?.name}
             </Typography>
             <Typography
               sx={{
