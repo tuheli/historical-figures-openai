@@ -1,44 +1,60 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const historicalFiguresData: Array<{
+export interface IMessage {
   id: string;
-  name: string;
-  title: string;
-  imageUrl: string;
-}> = [
+  sender: string;
+  content: string;
+  date: string;
+}
+
+const historicalFiguresData: HistoricalFigure[] = [
   {
     id: "1",
     name: "Abraham Lincoln",
     title: "President",
     imageUrl: "abraham-lincoln.png",
+    messages: [
+      {
+        id: "1",
+        sender: "me",
+        content:
+          "Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you?",
+        date: new Date().toLocaleString(),
+      },
+      {
+        id: "2",
+        sender: "1",
+        content:
+          "Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. ",
+        date: new Date().toLocaleString(),
+      },
+    ],
   },
   {
     id: "2",
     name: "Albert Einstein",
     title: "Scientist",
     imageUrl: "albert-einstein.png",
+    messages: [],
   },
 ];
 
-interface HistoricalFigure {
+export interface HistoricalFigure {
   id: string;
   name: string;
   title: string;
   imageUrl: string;
+  messages: IMessage[];
 }
 
 interface State {
   allHistoricalFigures: HistoricalFigure[];
-  selectedHistoricalFigure: HistoricalFigure | undefined;
+  selectedHistoricalFigureId: string | undefined;
 }
 
 const initialState: State = {
-  allHistoricalFigures: historicalFiguresData
-    .concat(historicalFiguresData)
-    .concat(historicalFiguresData)
-    .concat(historicalFiguresData)
-    .concat(historicalFiguresData),
-  selectedHistoricalFigure: undefined,
+  allHistoricalFigures: historicalFiguresData,
+  selectedHistoricalFigureId: "1",
 };
 
 const slice = createSlice({
@@ -49,12 +65,27 @@ const slice = createSlice({
       state,
       action: PayloadAction<{ id: string }>
     ) => {
-      state.selectedHistoricalFigure = state.allHistoricalFigures.find(
+      state.selectedHistoricalFigureId = action.payload.id;
+    },
+    sentMessage: (
+      state,
+      action: PayloadAction<{ id: String; message: Omit<IMessage, "id"> }>
+    ) => {
+      const figure = state.allHistoricalFigures.find(
         (p) => p.id === action.payload.id
       );
+
+      if (!figure) return;
+
+      figure.messages.push({
+        id: `${figure.messages.length + 1}`,
+        content: action.payload.message.content,
+        date: new Date().toLocaleString(),
+        sender: action.payload.message.sender,
+      });
     },
   },
 });
 
 export default slice.reducer;
-export const { selectedHistoricalFigure } = slice.actions;
+export const { selectedHistoricalFigure, sentMessage } = slice.actions;
