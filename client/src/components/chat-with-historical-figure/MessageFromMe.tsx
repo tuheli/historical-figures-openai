@@ -14,7 +14,7 @@ export const MessageFromMe = ({ message, isLastElement }: MessageProps) => {
       ref={(ref) => {
         if (!isLastElement) return;
         ref?.scrollIntoView({
-          behavior: "smooth",
+          behavior: "instant",
         });
       }}
       sx={{
