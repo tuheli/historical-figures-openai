@@ -16,7 +16,18 @@ export const apiSlice = createApi({
         body,
       }),
     }),
+    albertEinstein: builder.mutation<{ message: string }, { input: string }>({
+      query: (body) => ({
+        url: "albert-einstein",
+        method: "POST",
+        body,
+      }),
+    }),
   }),
 });
 
-export const { useAbrahamLincolnMutation, usePingQuery } = apiSlice;
+export const {
+  usePingQuery,
+  useAbrahamLincolnMutation,
+  useAlbertEinsteinMutation,
+} = apiSlice;

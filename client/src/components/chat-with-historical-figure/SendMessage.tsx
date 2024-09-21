@@ -7,18 +7,16 @@ import {
   startedWaitingForMessage,
 } from "../../features/historicalFigureSlice";
 import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
-import { useAbrahamLincolnMutation } from "../../features/apiSlice";
 
 export const SendMessage = () => {
   const [input, setInput] = useState("");
-  const [askAbrahamLincoln] = useAbrahamLincolnMutation();
-  const figure = useHistoricalFigure();
+  const { figure, ask } = useHistoricalFigure();
   const dispatch = useAppDispatch();
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
-    if (!figure) return;
+    if (!figure || !ask) return;
 
     dispatch(
       sentMessage({
@@ -35,7 +33,8 @@ export const SendMessage = () => {
     setInput("");
 
     try {
-      const response = await askAbrahamLincoln({ input }).unwrap();
+      const response = await ask({ input }).unwrap();
+      console.log(response);
 
       dispatch(endedWaitingForMessage());
       dispatch(
