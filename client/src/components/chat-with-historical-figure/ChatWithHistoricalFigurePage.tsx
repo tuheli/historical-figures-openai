@@ -43,7 +43,7 @@ export const ChatWithHistoricalFigurePage = () => {
               </Box>
               <Box
                 sx={{
-                  mt: 2,
+                  my: 2,
                 }}
               >
                 <MessageIsLoading />
