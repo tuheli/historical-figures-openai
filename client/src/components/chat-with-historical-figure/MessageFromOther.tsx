@@ -1,21 +1,26 @@
 import { Box, Stack, Typography } from "@mui/material";
-import {
-  HistoricalFigure,
-  IMessage,
-} from "../../features/historicalFigureSlice";
+import { HistoricalFigure } from "../../features/historicalFigureSlice";
+import { MessageProps } from "./MessageFromMe";
 
-interface MessageFromOtherProps {
-  message: IMessage;
+interface MessageFromOtherProps extends MessageProps {
   historicalFigure: HistoricalFigure;
 }
 
 export const MessageFromOther = ({
   message,
   historicalFigure,
+  isLastElement,
 }: MessageFromOtherProps) => {
   const date = new Date(message.date);
+
   return (
     <Stack
+      ref={(ref) => {
+        if (!isLastElement) return;
+        ref?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }}
       sx={{
         flexDirection: "row",
       }}

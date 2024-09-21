@@ -1,14 +1,22 @@
 import { Stack, Typography } from "@mui/material";
 import { IMessage } from "../../features/historicalFigureSlice";
 
-interface MessageProps {
+export interface MessageProps {
   message: IMessage;
+  isLastElement: boolean;
 }
 
-export const MessageFromMe = ({ message }: MessageProps) => {
+export const MessageFromMe = ({ message, isLastElement }: MessageProps) => {
   const date = new Date(message.date);
+
   return (
     <Stack
+      ref={(ref) => {
+        if (!isLastElement) return;
+        ref?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }}
       sx={{
         width: "fit-content",
         minWidth: 200,

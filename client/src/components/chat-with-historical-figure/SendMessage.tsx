@@ -1,7 +1,11 @@
 import { Box, TextField } from "@mui/material";
 import { useAppDispatch } from "../../app/hooks";
 import { FormEvent, useState } from "react";
-import { sentMessage } from "../../features/historicalFigureSlice";
+import {
+  endedWaitingForMessage,
+  sentMessage,
+  startedWaitingForMessage,
+} from "../../features/historicalFigureSlice";
 import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
 import { useAbrahamLincolnMutation } from "../../features/apiSlice";
 
@@ -27,11 +31,13 @@ export const SendMessage = () => {
       })
     );
 
+    dispatch(startedWaitingForMessage());
     setInput("");
 
     try {
       const response = await askAbrahamLincoln({ input }).unwrap();
 
+      dispatch(endedWaitingForMessage());
       dispatch(
         sentMessage({
           id: figure.id,
@@ -44,6 +50,7 @@ export const SendMessage = () => {
       );
     } catch (error) {
       console.log(error);
+      dispatch(endedWaitingForMessage());
     }
   };
 

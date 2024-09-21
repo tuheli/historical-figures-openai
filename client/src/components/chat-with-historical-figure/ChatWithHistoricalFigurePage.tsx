@@ -3,6 +3,7 @@ import { HistoricalFigureProfile } from "./HistoricalFigureProfile";
 import { MessagesDrawer } from "./MessagesDrawer";
 import { Messages } from "./Messages";
 import { SendMessage } from "./SendMessage";
+import { MessageIsLoading } from "./MessageIsLoading";
 
 export const ChatWithHistoricalFigurePage = () => {
   return (
@@ -30,9 +31,10 @@ export const ChatWithHistoricalFigurePage = () => {
             </Box>
             <Box
               sx={{
-                mt: 4,
+                mt: 2,
               }}
             >
+              <MessageIsLoading />
               <SendMessage />
             </Box>
           </Stack>

@@ -50,11 +50,13 @@ export interface HistoricalFigure {
 interface State {
   allHistoricalFigures: HistoricalFigure[];
   selectedHistoricalFigureId: string | undefined;
+  isLoadingMessage: boolean;
 }
 
 const initialState: State = {
   allHistoricalFigures: historicalFiguresData,
   selectedHistoricalFigureId: "1",
+  isLoadingMessage: false,
 };
 
 const slice = createSlice({
@@ -84,8 +86,19 @@ const slice = createSlice({
         sender: action.payload.message.sender,
       });
     },
+    startedWaitingForMessage: (state) => {
+      state.isLoadingMessage = true;
+    },
+    endedWaitingForMessage: (state) => {
+      state.isLoadingMessage = false;
+    },
   },
 });
 
 export default slice.reducer;
-export const { selectedHistoricalFigure, sentMessage } = slice.actions;
+export const {
+  selectedHistoricalFigure,
+  sentMessage,
+  startedWaitingForMessage,
+  endedWaitingForMessage,
+} = slice.actions;
