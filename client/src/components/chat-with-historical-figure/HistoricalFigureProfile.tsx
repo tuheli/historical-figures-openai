@@ -12,6 +12,7 @@ export const HistoricalFigureProfile = () => {
           justifyContent: "space-between",
           alignItems: "center",
           flex: 1,
+          px: 2,
         }}
       >
         <Stack
