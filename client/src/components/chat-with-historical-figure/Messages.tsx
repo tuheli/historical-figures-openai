@@ -4,7 +4,7 @@ import { MessageFromOther } from "./MessageFromOther";
 import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
 
 export const Messages = () => {
-  const figure = useHistoricalFigure();
+  const { figure } = useHistoricalFigure();
 
   if (!figure) return null;
 
@@ -15,7 +15,6 @@ export const Messages = () => {
         gap: 1,
         p: 1,
         overflowY: "auto",
-        maxHeight: "70vh",
       }}
     >
       {figure.messages.map((message, index) => {

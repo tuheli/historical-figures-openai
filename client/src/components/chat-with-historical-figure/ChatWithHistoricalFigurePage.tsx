@@ -1,4 +1,4 @@
-import { Box, Container, Stack } from "@mui/material";
+import { Box, Divider, Stack } from "@mui/material";
 import { HistoricalFigureProfile } from "./HistoricalFigureProfile";
 import { MessagesDrawer } from "./left-side-drawer/MessagesDrawer";
 import { Messages } from "./Messages";
@@ -8,18 +8,26 @@ import { MessageIsLoading } from "./MessageIsLoading";
 export const ChatWithHistoricalFigurePage = () => {
   return (
     <>
-      <Container maxWidth="xl">
+      <Box>
         <Stack
           sx={{
             flexDirection: "row",
-            m: 2,
+            height: "calc(100vh - 0px)",
           }}
         >
-          <MessagesDrawer />
+          <Box
+            sx={{
+              p: 2,
+            }}
+          >
+            <MessagesDrawer />
+          </Box>
+          <Divider orientation="vertical" />
           <Stack
             sx={{
               flex: 1,
               justifyContent: "space-between",
+              p: 2,
             }}
           >
             <Box>
@@ -44,7 +52,7 @@ export const ChatWithHistoricalFigurePage = () => {
             </Box>
           </Stack>
         </Stack>
-      </Container>
+      </Box>
     </>
   );
 };

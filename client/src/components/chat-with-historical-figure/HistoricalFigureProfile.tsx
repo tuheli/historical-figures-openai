@@ -2,7 +2,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
 
 export const HistoricalFigureProfile = () => {
-  const figure = useHistoricalFigure();
+  const { figure } = useHistoricalFigure();
 
   return (
     <>
@@ -12,7 +12,6 @@ export const HistoricalFigureProfile = () => {
           justifyContent: "space-between",
           alignItems: "center",
           flex: 1,
-          px: 2,
         }}
       >
         <Stack

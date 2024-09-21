@@ -19,11 +19,9 @@ export const MessagesDrawer = () => {
       <Box
         sx={{
           width: 340,
-          height: "90vh",
           display: "flex",
           flexDirection: "column",
           gap: 2,
-          borderRight: "1px solid grey",
         }}
       >
         <Stack
