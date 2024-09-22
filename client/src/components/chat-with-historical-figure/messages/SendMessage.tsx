@@ -1,12 +1,12 @@
 import { Box, TextField } from "@mui/material";
-import { useAppDispatch } from "../../app/hooks";
 import { FormEvent, useState } from "react";
+import { useAppDispatch } from "../../../app/hooks";
+import { useHistoricalFigure } from "../../../hooks/useHistoricalFigure";
 import {
   endedWaitingForMessage,
   sentMessage,
   startedWaitingForMessage,
-} from "../../features/historicalFigureSlice";
-import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
+} from "../../../features/historicalFigureSlice";
 
 export const SendMessage = () => {
   const [input, setInput] = useState("");

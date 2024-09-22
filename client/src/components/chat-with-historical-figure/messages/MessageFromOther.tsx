@@ -1,7 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { HistoricalFigure } from "../../features/historicalFigureSlice";
 import { MessageProps } from "./MessageFromMe";
-import { formatDate } from "../../utils/common";
+import { HistoricalFigure } from "../../../features/historicalFigureSlice";
+import { formatDate } from "../../../utils/common";
 
 interface MessageFromOtherProps extends MessageProps {
   historicalFigure: HistoricalFigure;

@@ -1,10 +1,10 @@
 import { Box, Container, Divider, Stack } from "@mui/material";
 import { HistoricalFigureProfile } from "./top-section/HistoricalFigureProfile";
-import { Messages } from "./Messages";
-import { SendMessage } from "./SendMessage";
-import { MessageIsLoading } from "./MessageIsLoading";
 import { MessagesDrawer } from "./left-side-drawer/MessagesDrawer";
 import { MessagesDrawerModal } from "./top-section/MessagesDrawerModal";
+import { Messages } from "./messages/Messages";
+import { MessageIsLoading } from "./messages/MessageIsLoading";
+import { SendMessage } from "./messages/SendMessage";
 
 export const ChatWithHistoricalFigurePage = () => {
   return (

@@ -1,6 +1,6 @@
 import { Stack, Typography } from "@mui/material";
-import { IMessage } from "../../features/historicalFigureSlice";
-import { formatDate } from "../../utils/common";
+import { formatDate } from "../../../utils/common";
+import { IMessage } from "../../../features/historicalFigureSlice";
 
 export interface MessageProps {
   message: IMessage;

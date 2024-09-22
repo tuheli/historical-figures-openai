@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
 import { MessageFromMe } from "./MessageFromMe";
 import { MessageFromOther } from "./MessageFromOther";
-import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
+import { useHistoricalFigure } from "../../../hooks/useHistoricalFigure";
 
 export const Messages = () => {
   const { figure } = useHistoricalFigure();
