@@ -17,9 +17,7 @@ export const MessageFromOther = ({
     <Stack
       ref={(ref) => {
         if (!isLastElement) return;
-        ref?.scrollIntoView({
-          behavior: "smooth",
-        });
+        ref?.scrollIntoView(true);
       }}
       sx={{
         flexDirection: "row",

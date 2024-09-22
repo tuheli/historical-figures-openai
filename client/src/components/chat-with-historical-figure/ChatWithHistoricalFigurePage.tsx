@@ -1,23 +1,22 @@
 import { Box, Divider, Stack } from "@mui/material";
-import { HistoricalFigureProfile } from "./HistoricalFigureProfile";
-import { MessagesDrawer } from "./left-side-drawer/MessagesDrawer";
+import { HistoricalFigureProfile } from "./top-section/HistoricalFigureProfile";
 import { Messages } from "./Messages";
 import { SendMessage } from "./SendMessage";
 import { MessageIsLoading } from "./MessageIsLoading";
+import { MessagesDrawerModal } from "./top-section/MessagesDrawerModal";
 
 export const ChatWithHistoricalFigurePage = () => {
   return (
     <>
+      <MessagesDrawerModal />
       <Box>
         <Stack
           sx={{
             flexDirection: "row",
             height: "calc(100vh - 0px)",
+            maxHeight: "calc(100vh - 0px)",
           }}
         >
-          <Box>
-            <MessagesDrawer />
-          </Box>
           <Divider orientation="vertical" />
           <Stack
             sx={{
@@ -35,17 +34,26 @@ export const ChatWithHistoricalFigurePage = () => {
               </Box>
               <Divider />
             </Box>
-            <Box>
+            <Box
+              sx={
+                {
+                  // bgcolor: "palegoldenrod",
+                }
+              }
+            >
               <Box
                 sx={{
-                  mt: 4,
+                  // mt: 4,
+                  overflowY: "scroll",
+                  maxHeight: "60vh",
+                  // bgcolor: "lightyellow",
                 }}
               >
                 <Messages />
               </Box>
               <Box
                 sx={{
-                  my: 2,
+                  my: 1,
                   px: 2,
                 }}
               >

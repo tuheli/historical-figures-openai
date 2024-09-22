@@ -13,9 +13,7 @@ export const MessageFromMe = ({ message, isLastElement }: MessageProps) => {
     <Stack
       ref={(ref) => {
         if (!isLastElement) return;
-        ref?.scrollIntoView({
-          behavior: "instant",
-        });
+        ref?.scrollIntoView(false);
       }}
       sx={{
         width: "fit-content",

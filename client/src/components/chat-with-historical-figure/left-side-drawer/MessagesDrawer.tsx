@@ -3,7 +3,11 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { DrawerItem } from "./DrawerItem";
 import { selectedHistoricalFigure } from "../../../features/historicalFigureSlice";
 
-export const MessagesDrawer = () => {
+interface MessagesDrawerProps {
+  onClickItem?: () => void;
+}
+
+export const MessagesDrawer = ({ onClickItem }: MessagesDrawerProps) => {
   const state = useAppSelector(
     (state) => state.historicalFigure.allHistoricalFigures
   );
@@ -12,13 +16,14 @@ export const MessagesDrawer = () => {
 
   const onClickDrawerItem = (id: string) => {
     dispatch(selectedHistoricalFigure({ id }));
+    onClickItem && onClickItem();
   };
 
   return (
     <>
       <Box
         sx={{
-          width: 340,
+          width: { xs: undefined, md: 340 },
           display: "flex",
           flexDirection: "column",
           gap: 2,

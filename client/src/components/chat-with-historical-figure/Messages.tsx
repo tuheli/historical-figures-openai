@@ -14,7 +14,6 @@ export const Messages = () => {
         flex: 1,
         gap: 1,
         p: 1,
-        overflowY: "auto",
       }}
     >
       {figure.messages.map((message, index) => {
