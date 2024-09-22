@@ -2,6 +2,7 @@ import { useAppSelector } from "../app/hooks";
 import {
   useAbrahamLincolnMutation,
   useAlbertEinsteinMutation,
+  useNeilArmstrongMutation,
 } from "../features/apiSlice";
 
 export const useHistoricalFigure = () => {
@@ -9,6 +10,7 @@ export const useHistoricalFigure = () => {
 
   const [askAbrahamLincoln] = useAbrahamLincolnMutation();
   const [askAlbertEinstein] = useAlbertEinsteinMutation();
+  const [askNeilArmstrong] = useNeilArmstrongMutation();
 
   const selected = state.selectedHistoricalFigureId;
   const figure = state.allHistoricalFigures.find((p) => p.id === selected);
@@ -21,6 +23,8 @@ export const useHistoricalFigure = () => {
         return askAbrahamLincoln;
       case "Albert Einstein":
         return askAlbertEinstein;
+      case "Neil Armstrong":
+        return askNeilArmstrong;
       default:
         throw new Error("Bad figure name.");
     }

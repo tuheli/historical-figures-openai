@@ -12,29 +12,21 @@ const historicalFiguresData: HistoricalFigure[] = [
     id: "1",
     name: "Abraham Lincoln",
     title: "President",
-    imageUrl: "abraham-lincoln.png",
-    messages: [
-      // {
-      //   id: "1",
-      //   sender: "me",
-      //   content:
-      //     "Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you? Who are you?",
-      //   date: new Date().toLocaleString(),
-      // },
-      // {
-      //   id: "2",
-      //   sender: "1",
-      //   content:
-      //     "Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. Hello! I am Abraham Lincoln. ",
-      //   date: new Date().toLocaleString(),
-      // },
-    ],
+    imageUrl: "./cartoony/abraham-lincoln.png",
+    messages: [],
   },
   {
     id: "2",
     name: "Albert Einstein",
     title: "Scientist",
-    imageUrl: "albert-einstein.png",
+    imageUrl: "./cartoony/albert-einstein.png",
+    messages: [],
+  },
+  {
+    id: "3",
+    name: "Neil Armstrong",
+    title: "Astronaut",
+    imageUrl: "./cartoony/neil-armstrong.png",
     messages: [],
   },
 ];
