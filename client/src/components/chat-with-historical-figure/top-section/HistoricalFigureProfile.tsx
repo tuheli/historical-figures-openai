@@ -54,19 +54,36 @@ export const HistoricalFigureProfile = () => {
             >
               {figure?.name}
             </Typography>
-            <Typography
+            <Stack
               sx={{
-                fontSize: 14,
-                fontStyle: "italic",
+                flexDirection: "row",
+                alignItems: "center",
+                gap: 1,
               }}
             >
-              Active now
-            </Typography>
+              <Typography
+                sx={{
+                  fontSize: 14,
+                  fontStyle: "italic",
+                }}
+              >
+                Active now
+              </Typography>
+              <Box
+                sx={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: 5,
+                  bgcolor: "lightgreen",
+                }}
+              />
+            </Stack>
           </Stack>
         </Stack>
         <Button
           variant="outlined"
           onClick={onClickOthers}
+          size="small"
           sx={{
             display: { xs: "block", sm: "block", md: "none" },
           }}
