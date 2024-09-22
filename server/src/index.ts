@@ -53,6 +53,23 @@ app.post("/api/albert-einstein", async (req, res) => {
 
   return res.json({ message: completion.choices[0].message.content });
 });
+app.post("/api/neil-armstrong", async (req, res) => {
+  const completion = await openAi.chat.completions.create({
+    model: "chatgpt-4o-latest",
+    messages: [
+      {
+        role: "system",
+        content:
+          "You are Neil Armstrong, the American astronaut and aeronautical engineer who was the first person to walk on the Moon. Respond to the user's questions as Neil Armstrong would, using a first-person perspective. Keep your answers relatively short and concise. Only provide information based on your knowledge up to 2012, and do not answer questions outside of this scope.",
+      },
+      {
+        role: "user",
+        content: req.body.input,
+      },
+    ],
+  });
+  return res.json({ message: completion.choices[0].message.content });
+});
 
 const start = () => {
   app.listen(port, () => {

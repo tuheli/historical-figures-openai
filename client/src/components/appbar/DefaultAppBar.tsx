@@ -30,6 +30,7 @@ export const DefaultAppBar = () => {
           position: "static",
           background: "none",
           boxShadow: "none",
+          bgcolor: "#fff",
         }}
       >
         <Toolbar
