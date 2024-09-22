@@ -21,6 +21,7 @@ export const HistoricalFigureCards = () => {
         container
         sx={{
           justifyContent: "center",
+          gap: 1,
         }}
       >
         {data.map(({ id, name, imageUrl, title }, index) => {
