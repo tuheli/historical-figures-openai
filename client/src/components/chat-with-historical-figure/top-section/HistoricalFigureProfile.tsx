@@ -64,7 +64,13 @@ export const HistoricalFigureProfile = () => {
             </Typography>
           </Stack>
         </Stack>
-        <Button variant="outlined" onClick={onClickOthers}>
+        <Button
+          variant="outlined"
+          onClick={onClickOthers}
+          sx={{
+            display: { xs: "block", sm: "block", md: "none" },
+          }}
+        >
           Others
         </Button>
       </Stack>
