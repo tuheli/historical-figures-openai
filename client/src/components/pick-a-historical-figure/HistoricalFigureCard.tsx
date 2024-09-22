@@ -19,21 +19,21 @@ export const HistoricalFigureCard = ({
         onClick={onClick}
         sx={{
           width: 240,
-          height: 260,
+          height: 240,
           p: 2,
           backgroundImage: imageSrc,
-          backgroundSize: "50% auto",
+          backgroundSize: "100% auto",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          backgroundColor: "rgba(0, 0, 0, 0.2)",
           backgroundBlendMode: "multiply",
           outline: "1px solid grey",
           alignContent: "end",
           cursor: "pointer",
           userSelect: "none",
           transition: "all 0.2s",
+          filter: "brightness(0.95)",
           "&:hover": {
-            backgroundColor: "rgba(0, 0, 0, 0.02)",
+            filter: "brightness(1.05)",
           },
         }}
       >
@@ -41,6 +41,7 @@ export const HistoricalFigureCard = ({
           sx={{
             textAlign: "center",
             color: "white",
+            filter: "brightness(1.0)",
           }}
         >
           <Typography
