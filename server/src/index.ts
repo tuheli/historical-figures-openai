@@ -76,6 +76,14 @@ app.post("/api/neil-armstrong", async (req, res) => {
   });
   return res.json({ message: completion.choices[0].message.content });
 });
+app.get("/*", (req, res) => {
+  if (req.originalUrl.startsWith("/api")) {
+    return res.status(404).json({ message: "Unknown endpoint." });
+  } else {
+    const filepath = absoluteDistPath + "index.html";
+    return res.sendFile(filepath);
+  }
+});
 
 const start = () => {
   app.listen(port, () => {
