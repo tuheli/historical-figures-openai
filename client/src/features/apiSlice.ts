@@ -23,6 +23,13 @@ export const apiSlice = createApi({
         body,
       }),
     }),
+    neilArmstrong: builder.mutation<{ message: string }, { input: string }>({
+      query: (body) => ({
+        url: "neil-armstrong",
+        method: "POST",
+        body,
+      }),
+    }),
   }),
 });
 
@@ -30,4 +37,5 @@ export const {
   usePingQuery,
   useAbrahamLincolnMutation,
   useAlbertEinsteinMutation,
+  useNeilArmstrongMutation,
 } = apiSlice;
