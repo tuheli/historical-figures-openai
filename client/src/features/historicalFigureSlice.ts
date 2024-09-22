@@ -74,7 +74,7 @@ const slice = createSlice({
       figure.messages.push({
         id: `${figure.messages.length + 1}`,
         content: action.payload.message.content,
-        date: new Date().toLocaleString(),
+        date: new Date().toISOString(),
         sender: action.payload.message.sender,
       });
     },
