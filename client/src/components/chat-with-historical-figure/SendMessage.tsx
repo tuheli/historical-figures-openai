@@ -34,8 +34,6 @@ export const SendMessage = () => {
 
     try {
       const response = await ask({ input }).unwrap();
-      console.log(response);
-
       dispatch(endedWaitingForMessage());
       dispatch(
         sentMessage({
