@@ -16,8 +16,6 @@ export const ChatWithHistoricalFigurePage = () => {
             sx={{
               flexDirection: "row",
               height: "calc(100dvh)",
-              // maxHeight: "calc(100vh - 0px)",
-              // overflow: "auto",
             }}
           >
             <Box
