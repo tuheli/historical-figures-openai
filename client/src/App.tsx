@@ -1,8 +1,7 @@
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
-import { WelcomeAIHistoricalFiguresPage } from "./components/welcome-ai-historical-figures/WelcomeAIHistoricalFiguresPage";
-import { PickAHistoricalFigurePage } from "./components/pick-a-historical-figure/PickAHistoricalFigurePage";
 import { ChatWithHistoricalFigurePage } from "./components/chat-with-historical-figure/ChatWithHistoricalFigurePage";
+import { Redirect } from "./components/redirect/Redirect";
 
 export const App = () => {
   const theme = createTheme({
@@ -28,9 +27,8 @@ export const App = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Routes>
-          <Route path="/" element={<WelcomeAIHistoricalFiguresPage />} />
-          <Route path="/figures" element={<PickAHistoricalFigurePage />} />
-          <Route path="/chat" element={<ChatWithHistoricalFigurePage />} />
+          <Route path="/" element={<ChatWithHistoricalFigurePage />} />
+          <Route path="*" element={<Redirect to="/" />} />
         </Routes>
       </ThemeProvider>
     </>
