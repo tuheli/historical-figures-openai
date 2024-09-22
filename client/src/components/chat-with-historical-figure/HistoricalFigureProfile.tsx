@@ -1,5 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
+import { ScaleInAnimation } from "../animation-wrapper/ScaleInAnimation";
 
 export const HistoricalFigureProfile = () => {
   const { figure } = useHistoricalFigure();
@@ -20,19 +21,21 @@ export const HistoricalFigureProfile = () => {
             gap: 1,
           }}
         >
-          <Box
-            component="img"
-            src={figure?.imageUrl}
-            sx={{
-              width: 50,
-              height: 50,
-              borderRadius: 25,
-            }}
-          />
+          <ScaleInAnimation>
+            <Box
+              component="img"
+              src={figure?.imageUrl}
+              sx={{
+                width: 70,
+                height: 70,
+                borderRadius: 35,
+              }}
+            />
+          </ScaleInAnimation>
           <Stack
             sx={{
               flexDirection: "column",
-              justifyContent: "space-around",
+              justifyContent: "center",
             }}
           >
             <Typography

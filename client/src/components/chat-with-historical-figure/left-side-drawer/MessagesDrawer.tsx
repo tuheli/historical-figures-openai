@@ -29,32 +29,43 @@ export const MessagesDrawer = () => {
             flexDirection: "row",
             alignItems: "center",
             gap: 2,
+            p: 2,
           }}
         >
           <Box
             component="img"
             src="logoipsum-296.svg"
             sx={{
-              height: 50,
-              width: 50,
+              height: 40,
+              width: 40,
             }}
           />
           <Typography variant="h6" component="p">
             Messages
           </Typography>
         </Stack>
-        <Stack
-          sx={{
-            gap: 2,
-          }}
-        >
+        <Stack>
           {state.map((item) => {
             return (
-              <Box key={item.id}>
-                <DrawerItem
-                  historicalFigure={item}
-                  onClick={() => onClickDrawerItem(item.id)}
-                />
+              <Box
+                key={item.id}
+                sx={{
+                  "&:hover": {
+                    bgcolor: "rgba(0, 0, 0, 0.05)",
+                  },
+                }}
+              >
+                <Box
+                  sx={{
+                    px: 2,
+                    py: 1,
+                  }}
+                >
+                  <DrawerItem
+                    historicalFigure={item}
+                    onClick={() => onClickDrawerItem(item.id)}
+                  />
+                </Box>
                 <Divider />
               </Box>
             );

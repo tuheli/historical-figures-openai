@@ -15,11 +15,7 @@ export const ChatWithHistoricalFigurePage = () => {
             height: "calc(100vh - 0px)",
           }}
         >
-          <Box
-            sx={{
-              p: 2,
-            }}
-          >
+          <Box>
             <MessagesDrawer />
           </Box>
           <Divider orientation="vertical" />
@@ -27,11 +23,17 @@ export const ChatWithHistoricalFigurePage = () => {
             sx={{
               flex: 1,
               justifyContent: "space-between",
-              p: 2,
             }}
           >
             <Box>
-              <HistoricalFigureProfile />
+              <Box
+                sx={{
+                  p: 2,
+                }}
+              >
+                <HistoricalFigureProfile />
+              </Box>
+              <Divider />
             </Box>
             <Box>
               <Box
@@ -44,6 +46,7 @@ export const ChatWithHistoricalFigurePage = () => {
               <Box
                 sx={{
                   my: 2,
+                  px: 2,
                 }}
               >
                 <MessageIsLoading />
