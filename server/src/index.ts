@@ -3,8 +3,13 @@ import express from "express";
 import cors from "cors";
 import OpenAI from "openai";
 import { openAiApiKey } from "./config";
+import path from "path";
 
 const port = 3000;
+const relativeDistPath =
+  process.env.NODE_ENV === "production" ? "../" : "../dist";
+const absoluteDistPath = path.join(__dirname, relativeDistPath);
+
 const app = express();
 const openAi = new OpenAI({
   apiKey: openAiApiKey,
@@ -12,6 +17,7 @@ const openAi = new OpenAI({
 
 app.use(cors());
 app.use(express.json());
+app.use("/", express.static(absoluteDistPath));
 app.get("/api/", async (req, res) => {
   return res.status(200).json({ message: "PingPong" });
 });
