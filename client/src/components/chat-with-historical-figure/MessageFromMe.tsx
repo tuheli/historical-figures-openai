@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { IMessage } from "../../features/historicalFigureSlice";
+import { formatDate } from "../../utils/common";
 
 export interface MessageProps {
   message: IMessage;
@@ -7,7 +8,7 @@ export interface MessageProps {
 }
 
 export const MessageFromMe = ({ message, isLastElement }: MessageProps) => {
-  const date = new Date(message.date);
+  const formattedDate = formatDate(new Date(message.date));
 
   return (
     <Stack
@@ -42,7 +43,7 @@ export const MessageFromMe = ({ message, isLastElement }: MessageProps) => {
             color: "grey",
           }}
         >
-          {date.toLocaleTimeString()}
+          {formattedDate}
         </Typography>
       </Stack>
       <Typography

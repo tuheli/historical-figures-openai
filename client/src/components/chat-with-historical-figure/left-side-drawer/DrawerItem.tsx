@@ -1,5 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { HistoricalFigure } from "../../../features/historicalFigureSlice";
+import { formatDate, getPastDate } from "../../../utils/common";
 
 interface DrawerItemProps {
   historicalFigure: HistoricalFigure;
@@ -7,6 +8,13 @@ interface DrawerItemProps {
 }
 
 export const DrawerItem = ({ historicalFigure, onClick }: DrawerItemProps) => {
+  const messagesLength = historicalFigure.messages.length;
+  const lastActiveDate =
+    messagesLength > 0
+      ? new Date(historicalFigure.messages[messagesLength - 1].date)
+      : getPastDate(1, 7 * 24);
+  const formattedDate = formatDate(lastActiveDate);
+
   return (
     <Stack
       onClick={onClick}
@@ -46,7 +54,7 @@ export const DrawerItem = ({ historicalFigure, onClick }: DrawerItemProps) => {
             fontWeight: 400,
           }}
         >
-          Last Active: xxxx
+          Last Active: {formattedDate}
         </Typography>
       </Stack>
     </Stack>

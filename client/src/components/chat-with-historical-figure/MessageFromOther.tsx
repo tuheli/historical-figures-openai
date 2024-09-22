@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { HistoricalFigure } from "../../features/historicalFigureSlice";
 import { MessageProps } from "./MessageFromMe";
+import { formatDate } from "../../utils/common";
 
 interface MessageFromOtherProps extends MessageProps {
   historicalFigure: HistoricalFigure;
@@ -11,7 +12,7 @@ export const MessageFromOther = ({
   historicalFigure,
   isLastElement,
 }: MessageFromOtherProps) => {
-  const date = new Date(message.date);
+  const formattedDate = formatDate(new Date(message.date));
 
   return (
     <Stack
@@ -61,7 +62,7 @@ export const MessageFromOther = ({
               color: "grey",
             }}
           >
-            {date.toLocaleTimeString()}
+            {formattedDate}
           </Typography>
         </Stack>
         <Typography
