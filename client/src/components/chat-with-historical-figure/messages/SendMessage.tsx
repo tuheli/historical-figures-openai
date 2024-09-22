@@ -1,4 +1,4 @@
-import { Box, TextField } from "@mui/material";
+import { Box, IconButton, InputAdornment, TextField } from "@mui/material";
 import { FormEvent, useState } from "react";
 import { useAppDispatch } from "../../../app/hooks";
 import { useHistoricalFigure } from "../../../hooks/useHistoricalFigure";
@@ -7,6 +7,7 @@ import {
   sentMessage,
   startedWaitingForMessage,
 } from "../../../features/historicalFigureSlice";
+import SendIcon from "@mui/icons-material/Send";
 
 export const SendMessage = () => {
   const [input, setInput] = useState("");
@@ -62,11 +63,27 @@ export const SendMessage = () => {
       }}
     >
       <TextField
-        label={`Send a message to ${figure?.name}`}
+        label={`Send a message`}
         variant="outlined"
         fullWidth
         value={input}
         onChange={({ target }) => setInput(target.value)}
+        slotProps={{
+          input: {
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  onClick={onSubmit}
+                  sx={{
+                    color: "text.secondary",
+                  }}
+                >
+                  <SendIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          },
+        }}
       />
     </Box>
   );
