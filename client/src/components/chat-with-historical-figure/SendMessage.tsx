@@ -7,6 +7,7 @@ import {
   startedWaitingForMessage,
 } from "../../features/historicalFigureSlice";
 import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
+import { MessageIsLoading } from "./MessageIsLoading";
 
 export const SendMessage = () => {
   const [input, setInput] = useState("");
@@ -52,7 +53,15 @@ export const SendMessage = () => {
   };
 
   return (
-    <Box component="form" noValidate autoComplete="off" onSubmit={onSubmit}>
+    <Box
+      component="form"
+      noValidate
+      autoComplete="off"
+      onSubmit={onSubmit}
+      sx={{
+        px: 2,
+      }}
+    >
       <TextField
         label={`Send a message to ${figure?.name}`}
         variant="outlined"

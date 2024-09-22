@@ -1,17 +1,9 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useHistoricalFigure } from "../../../hooks/useHistoricalFigure";
 import { ScaleInAnimation } from "../../animation-wrapper/ScaleInAnimation";
-import { useAppDispatch } from "../../../app/hooks";
-import { openedModal } from "../../../features/mobileSlice";
 
 export const HistoricalFigureProfile = () => {
   const { figure } = useHistoricalFigure();
-
-  const dispatch = useAppDispatch();
-
-  const openMobileModal = () => {
-    dispatch(openedModal());
-  };
 
   return (
     <>
@@ -71,15 +63,6 @@ export const HistoricalFigureProfile = () => {
           }}
         >
           View Profile
-        </Button>
-        <Button
-          variant="contained"
-          onClick={openMobileModal}
-          sx={{
-            width: 140,
-          }}
-        >
-          Others
         </Button>
       </Stack>
     </>

@@ -9,8 +9,9 @@ export const MessageIsLoading = () => {
   return (
     <Box
       sx={{
+        position: "relative",
+        top: -14,
         width: "100%",
-        py: 2,
         display: isLoadingMessage ? "block" : "hidden",
       }}
     >

@@ -13,7 +13,7 @@ export const MessageFromMe = ({ message, isLastElement }: MessageProps) => {
     <Stack
       ref={(ref) => {
         if (!isLastElement) return;
-        ref?.scrollIntoView(false);
+        ref?.scrollIntoView(true);
       }}
       sx={{
         width: "fit-content",
