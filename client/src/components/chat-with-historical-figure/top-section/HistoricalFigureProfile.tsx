@@ -1,15 +1,23 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useHistoricalFigure } from "../../../hooks/useHistoricalFigure";
 import { ScaleInAnimation } from "../../animation-wrapper/ScaleInAnimation";
+import { useAppDispatch } from "../../../app/hooks";
+import { openedModal } from "../../../features/mobileSlice";
 
 export const HistoricalFigureProfile = () => {
   const { figure } = useHistoricalFigure();
+
+  const dispatch = useAppDispatch();
+
+  const onClickOthers = () => {
+    dispatch(openedModal());
+  };
 
   return (
     <>
       <Stack
         sx={{
-          flexDirection: { xs: "column", sm: "row" },
+          flexDirection: { xs: "row", sm: "row" },
           gap: { xs: 2, sm: 0 },
           justifyContent: "space-between",
           alignItems: "center",
@@ -56,13 +64,8 @@ export const HistoricalFigureProfile = () => {
             </Typography>
           </Stack>
         </Stack>
-        <Button
-          variant="contained"
-          sx={{
-            width: 140,
-          }}
-        >
-          View Profile
+        <Button variant="outlined" onClick={onClickOthers}>
+          Others
         </Button>
       </Stack>
     </>

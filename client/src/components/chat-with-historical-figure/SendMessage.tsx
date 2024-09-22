@@ -7,7 +7,6 @@ import {
   startedWaitingForMessage,
 } from "../../features/historicalFigureSlice";
 import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
-import { MessageIsLoading } from "./MessageIsLoading";
 
 export const SendMessage = () => {
   const [input, setInput] = useState("");

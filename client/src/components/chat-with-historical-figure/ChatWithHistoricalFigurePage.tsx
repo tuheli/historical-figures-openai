@@ -4,18 +4,20 @@ import { Messages } from "./Messages";
 import { SendMessage } from "./SendMessage";
 import { MessageIsLoading } from "./MessageIsLoading";
 import { MessagesDrawer } from "./left-side-drawer/MessagesDrawer";
+import { MessagesDrawerModal } from "./top-section/MessagesDrawerModal";
 
 export const ChatWithHistoricalFigurePage = () => {
   return (
     <>
-      <Container maxWidth="xl">
+      <MessagesDrawerModal />
+      <Container maxWidth={"xl"}>
         <Box>
           <Stack
             sx={{
               flexDirection: "row",
-              height: "calc(100vh - 0px)",
-              maxHeight: "calc(100vh - 0px)",
-              overflow: "auto",
+              height: "calc(100dvh)",
+              // maxHeight: "calc(100vh - 0px)",
+              // overflow: "auto",
             }}
           >
             <Box
@@ -24,6 +26,7 @@ export const ChatWithHistoricalFigurePage = () => {
                 top: 0,
                 borderRight: "1px solid",
                 borderColor: "divider",
+                display: { xs: "none", sm: "none", md: "block" },
               }}
             >
               <MessagesDrawer />
