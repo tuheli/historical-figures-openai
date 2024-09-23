@@ -1,12 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface IMessage {
-  id: string;
-  sender: string;
-  content: string;
-  date: string;
-}
-
 const historicalFiguresData: HistoricalFigure[] = [
   {
     id: "1",
@@ -29,7 +22,63 @@ const historicalFiguresData: HistoricalFigure[] = [
     imageUrl: "./cartoony/neil-armstrong.png",
     messages: [],
   },
+  {
+    id: "4",
+    name: "Marie Curie",
+    title: "Physicist and Chemist",
+    imageUrl: "./cartoony/marie-curie.png",
+    messages: [],
+  },
+  {
+    id: "5",
+    name: "Mahatma Gandhi",
+    title: "Leader",
+    imageUrl: "./cartoony/mahatma-gandhi.png",
+    messages: [],
+  },
+  {
+    id: "6",
+    name: "Leonardo da Vinci",
+    title: "Polymath",
+    imageUrl: "./cartoony/leonardo-da-vinci.png",
+    messages: [],
+  },
+  {
+    id: "7",
+    name: "Isaac Newton",
+    title: "Mathematician and Physicist",
+    imageUrl: "./cartoony/isaac-newton.png",
+    messages: [],
+  },
+  {
+    id: "8",
+    name: "Martin Luther King Jr.",
+    title: "Civil Rights Leader",
+    imageUrl: "./cartoony/martin-luther-king-jr.png",
+    messages: [],
+  },
+  {
+    id: "9",
+    name: "Ada Lovelace",
+    title: "Mathematician",
+    imageUrl: "./cartoony/ada-lovelace.png",
+    messages: [],
+  },
+  {
+    id: "10",
+    name: "Nelson Mandela",
+    title: "President",
+    imageUrl: "./cartoony/nelson-mandela.png",
+    messages: [],
+  },
 ];
+
+export interface IMessage {
+  id: string;
+  sender: string;
+  content: string;
+  date: string;
+}
 
 export interface HistoricalFigure {
   id: string;
