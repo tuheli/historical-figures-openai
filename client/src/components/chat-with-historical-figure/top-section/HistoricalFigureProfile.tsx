@@ -12,7 +12,7 @@ export const HistoricalFigureProfile = () => {
 
   const dispatch = useAppDispatch();
 
-  const onClickOthers = () => {
+  const onClickContacts = () => {
     dispatch(openedSelectFigureModal());
   };
 
@@ -93,13 +93,14 @@ export const HistoricalFigureProfile = () => {
         </Stack>
         <Button
           variant="outlined"
-          onClick={onClickOthers}
+          onClick={onClickContacts}
           size="small"
           sx={{
             display: { xs: "block", sm: "block", md: "none" },
+            width: 110,
           }}
         >
-          Others
+          Contacts
         </Button>
       </Stack>
     </>
