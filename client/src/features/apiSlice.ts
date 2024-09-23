@@ -9,23 +9,12 @@ export const apiSlice = createApi({
     ping: builder.query<{ output: string }, void>({
       query: () => "/",
     }),
-    abrahamLincoln: builder.mutation<{ message: string }, { input: string }>({
+    historicalFigureChat: builder.mutation<
+      { message: string },
+      { input: string; name: string }
+    >({
       query: (body) => ({
-        url: "abraham-lincoln",
-        method: "POST",
-        body,
-      }),
-    }),
-    albertEinstein: builder.mutation<{ message: string }, { input: string }>({
-      query: (body) => ({
-        url: "albert-einstein",
-        method: "POST",
-        body,
-      }),
-    }),
-    neilArmstrong: builder.mutation<{ message: string }, { input: string }>({
-      query: (body) => ({
-        url: "neil-armstrong",
+        url: "historical-figure-chat",
         method: "POST",
         body,
       }),
@@ -33,9 +22,4 @@ export const apiSlice = createApi({
   }),
 });
 
-export const {
-  usePingQuery,
-  useAbrahamLincolnMutation,
-  useAlbertEinsteinMutation,
-  useNeilArmstrongMutation,
-} = apiSlice;
+export const { usePingQuery, useHistoricalFigureChatMutation } = apiSlice;

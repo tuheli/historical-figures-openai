@@ -34,7 +34,7 @@ export const SendMessage = () => {
     setInput("");
 
     try {
-      const response = await ask({ input }).unwrap();
+      const response = await ask({ input, name: figure.name }).unwrap();
       dispatch(endedWaitingForMessage());
       dispatch(
         sentMessage({

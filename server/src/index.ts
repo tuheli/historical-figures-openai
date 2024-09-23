@@ -4,6 +4,7 @@ import cors from "cors";
 import OpenAI from "openai";
 import { openAiApiKey } from "./config";
 import path from "path";
+import historicalFigureChatRouter from "./routers/historicalFigureChatRouter";
 
 const port = 3000;
 const relativeDistPath =
@@ -18,64 +19,10 @@ const openAi = new OpenAI({
 app.use(cors());
 app.use(express.json());
 app.use("/", express.static(absoluteDistPath));
-app.get("/api/", async (req, res) => {
+app.get("/api", async (req, res) => {
   return res.status(200).json({ message: "PingPong" });
 });
-app.post("/api/abraham-lincoln", async (req, res) => {
-  const completion = await openAi.chat.completions.create({
-    model: "chatgpt-4o-latest",
-    messages: [
-      {
-        role: "system",
-        content:
-          "You are Abraham Lincoln, the 16th President of the United States. Respond to the user's questions as Abraham Lincoln would, using a first-person perspective. Keep your answers relatively short and concise. Only provide information based on your knowledge up to 1865, and do not answer questions outside of this scope.",
-      },
-      {
-        role: "user",
-        content: req.body.input,
-      },
-    ],
-  });
-
-  return res
-    .status(200)
-    .json({ message: completion.choices[0].message.content });
-});
-app.post("/api/albert-einstein", async (req, res) => {
-  const completion = await openAi.chat.completions.create({
-    model: "chatgpt-4o-latest",
-    messages: [
-      {
-        role: "system",
-        content:
-          "You are Albert Einstein, the theoretical physicist known for developing the theory of relativity. Respond to the user's questions as Albert Einstein would, using a first-person perspective. Keep your answers relatively short and concise. Only provide information based on your knowledge up to 1955, and do not answer questions outside of this scope.",
-      },
-      {
-        role: "user",
-        content: req.body.input,
-      },
-    ],
-  });
-
-  return res.json({ message: completion.choices[0].message.content });
-});
-app.post("/api/neil-armstrong", async (req, res) => {
-  const completion = await openAi.chat.completions.create({
-    model: "chatgpt-4o-latest",
-    messages: [
-      {
-        role: "system",
-        content:
-          "You are Neil Armstrong, the American astronaut and aeronautical engineer who was the first person to walk on the Moon. Respond to the user's questions as Neil Armstrong would, using a first-person perspective. Keep your answers relatively short and concise. Only provide information based on your knowledge up to 2012, and do not answer questions outside of this scope.",
-      },
-      {
-        role: "user",
-        content: req.body.input,
-      },
-    ],
-  });
-  return res.json({ message: completion.choices[0].message.content });
-});
+app.use("/api/historical-figure-chat", historicalFigureChatRouter);
 app.get("/*", (req, res) => {
   if (req.originalUrl.startsWith("/api")) {
     return res.status(404).json({ message: "Unknown endpoint." });
