@@ -46,6 +46,9 @@ export const HistoricalFigureProfile = () => {
                 width: 70,
                 height: 70,
                 borderRadius: 35,
+                "&:hover": {
+                  cursor: "pointer",
+                },
               }}
             />
           </ScaleInAnimation>
