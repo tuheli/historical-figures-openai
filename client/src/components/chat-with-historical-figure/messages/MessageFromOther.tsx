@@ -2,6 +2,8 @@ import { Box, Stack, Typography } from "@mui/material";
 import { MessageProps } from "./MessageFromMe";
 import { HistoricalFigure } from "../../../features/historicalFigureSlice";
 import { formatDate } from "../../../utils/common";
+import { useDispatch } from "react-redux";
+import { openedFigureInfoModal } from "../../../features/mobileSlice";
 
 interface MessageFromOtherProps extends MessageProps {
   historicalFigure: HistoricalFigure;
@@ -14,6 +16,12 @@ export const MessageFromOther = ({
 }: MessageFromOtherProps) => {
   const formattedDate = formatDate(new Date(message.date));
 
+  const dispatch = useDispatch();
+
+  const onClickImage = () => {
+    dispatch(openedFigureInfoModal());
+  };
+
   return (
     <Stack
       ref={(ref) => {
@@ -25,6 +33,7 @@ export const MessageFromOther = ({
       }}
     >
       <Box
+        onClick={onClickImage}
         component="img"
         src={historicalFigure?.imageUrl}
         sx={{
@@ -32,6 +41,9 @@ export const MessageFromOther = ({
           height: 50,
           borderRadius: 25,
           mx: 1,
+          "&:hover": {
+            cursor: "pointer",
+          },
         }}
       />
       <Stack
