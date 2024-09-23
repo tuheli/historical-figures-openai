@@ -2,7 +2,10 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import { useHistoricalFigure } from "../../../hooks/useHistoricalFigure";
 import { ScaleInAnimation } from "../../animation-wrapper/ScaleInAnimation";
 import { useAppDispatch } from "../../../app/hooks";
-import { openedModal } from "../../../features/mobileSlice";
+import {
+  openedFigureInfoModal,
+  openedSelectFigureModal,
+} from "../../../features/mobileSlice";
 
 export const HistoricalFigureProfile = () => {
   const { figure } = useHistoricalFigure();
@@ -10,7 +13,11 @@ export const HistoricalFigureProfile = () => {
   const dispatch = useAppDispatch();
 
   const onClickOthers = () => {
-    dispatch(openedModal());
+    dispatch(openedSelectFigureModal());
+  };
+
+  const onClickProfileImage = () => {
+    dispatch(openedFigureInfoModal());
   };
 
   return (
@@ -32,6 +39,7 @@ export const HistoricalFigureProfile = () => {
         >
           <ScaleInAnimation>
             <Box
+              onClick={onClickProfileImage}
               component="img"
               src={figure?.imageUrl}
               sx={{

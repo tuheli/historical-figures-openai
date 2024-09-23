@@ -3,17 +3,29 @@ import { createSlice } from "@reduxjs/toolkit";
 const slice = createSlice({
   name: "mobile",
   initialState: {
-    isChatModalOpen: false,
+    isSelectFigureModalOpen: false,
+    isFigureInfoModalOpen: false,
   },
   reducers: {
-    openedModal: (state) => {
-      state.isChatModalOpen = true;
+    openedSelectFigureModal: (state) => {
+      state.isSelectFigureModalOpen = true;
     },
-    closedModal: (state) => {
-      state.isChatModalOpen = false;
+    closedSelectFigureModal: (state) => {
+      state.isSelectFigureModalOpen = false;
+    },
+    openedFigureInfoModal: (state) => {
+      state.isFigureInfoModalOpen = true;
+    },
+    closedFigureInfoModal: (state) => {
+      state.isFigureInfoModalOpen = false;
     },
   },
 });
 
 export default slice.reducer;
-export const { openedModal, closedModal } = slice.actions;
+export const {
+  openedSelectFigureModal,
+  closedSelectFigureModal,
+  openedFigureInfoModal,
+  closedFigureInfoModal,
+} = slice.actions;
