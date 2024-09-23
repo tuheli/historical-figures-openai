@@ -10,12 +10,13 @@ export const ChatWithHistoricalFigurePage = () => {
   return (
     <>
       <MessagesDrawerModal />
-      <Container maxWidth={"xl"}>
+      <Container maxWidth={"xl"} sx={{}}>
         <Box>
           <Stack
             sx={{
               flexDirection: "row",
               height: "calc(100dvh)",
+              overflow: { xs: undefined, sm: undefined, md: "auto" },
             }}
           >
             <Box
@@ -25,6 +26,7 @@ export const ChatWithHistoricalFigurePage = () => {
                 borderRight: "1px solid",
                 borderColor: "divider",
                 display: { xs: "none", sm: "none", md: "block" },
+                overflow: "auto",
               }}
             >
               <MessagesDrawer />
