@@ -24,11 +24,12 @@ export const ChatWithHistoricalFigurePage = () => {
             <Box
               sx={{
                 position: "sticky",
-                top: 0,
+                top: 3 * 8,
                 borderRight: "1px solid",
                 borderColor: "divider",
                 display: { xs: "none", sm: "none", md: "block" },
                 overflow: "auto",
+                pt: 3,
               }}
             >
               <MessagesDrawer />
@@ -57,13 +58,13 @@ export const ChatWithHistoricalFigurePage = () => {
                   sx={{
                     position: "sticky",
                     bottom: 1 * 8,
-                    bgcolor: "background.paper",
                     mt: 3,
+                    bgcolor: "background.paper",
                   }}
                 >
                   <Box
                     sx={{
-                      px: 2,
+                      px: { xs: 1, sm: 1, md: 2 },
                       position: "relative",
                     }}
                   >

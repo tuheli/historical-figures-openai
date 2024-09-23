@@ -34,20 +34,11 @@ export const MessagesDrawer = ({ onClickItem }: MessagesDrawerProps) => {
             flexDirection: "row",
             alignItems: "center",
             gap: 2,
-            p: 2,
+            py: 2,
+            px: 2,
           }}
         >
-          <Box
-            component="img"
-            src="logoipsum-296.svg"
-            sx={{
-              height: 40,
-              width: 40,
-            }}
-          />
-          <Typography variant="h6" component="p">
-            Messages
-          </Typography>
+          <Typography variant="h5">Contacts</Typography>
         </Stack>
         <Stack>
           {state.map((item) => {

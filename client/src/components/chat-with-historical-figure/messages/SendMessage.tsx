@@ -59,7 +59,8 @@ export const SendMessage = () => {
       autoComplete="off"
       onSubmit={onSubmit}
       sx={{
-        px: 2,
+        px: { xs: 1, sm: 1, md: 2 },
+        bgcolor: "background.paper",
       }}
     >
       <TextField
