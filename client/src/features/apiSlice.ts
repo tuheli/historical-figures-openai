@@ -6,9 +6,6 @@ export const apiSlice = createApi({
     baseUrl: "/api",
   }),
   endpoints: (builder) => ({
-    ping: builder.query<{ output: string }, void>({
-      query: () => "/",
-    }),
     historicalFigureChat: builder.mutation<
       { message: string },
       { input: string; name: string }
@@ -22,4 +19,4 @@ export const apiSlice = createApi({
   }),
 });
 
-export const { usePingQuery, useHistoricalFigureChatMutation } = apiSlice;
+export const { useHistoricalFigureChatMutation } = apiSlice;
