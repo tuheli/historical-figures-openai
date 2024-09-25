@@ -1,10 +1,12 @@
 import { MessagesDrawer } from "../left-side-drawer/MessagesDrawer";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { closedSelectFigureModal } from "../../../features/mobileSlice";
+import { closedSelectFigureModal } from "../../../features/modalControlSlice";
 import { Dialog, DialogContent } from "@mui/material";
 
 export const MessagesDrawerModal = () => {
-  const open = useAppSelector((state) => state.mobile.isSelectFigureModalOpen);
+  const open = useAppSelector(
+    (state) => state.modalControl.isSelectFigureModalOpen
+  );
 
   const dispatch = useAppDispatch();
 

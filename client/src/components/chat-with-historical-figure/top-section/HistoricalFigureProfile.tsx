@@ -5,7 +5,7 @@ import { useAppDispatch } from "../../../app/hooks";
 import {
   openedFigureInfoModal,
   openedSelectFigureModal,
-} from "../../../features/mobileSlice";
+} from "../../../features/modalControlSlice";
 
 export const HistoricalFigureProfile = () => {
   const { figure } = useHistoricalFigure();

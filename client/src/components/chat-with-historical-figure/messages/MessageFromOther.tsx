@@ -3,7 +3,7 @@ import { MessageProps } from "./MessageFromMe";
 import { HistoricalFigure } from "../../../features/historicalFigureSlice";
 import { formatDate } from "../../../utils/common";
 import { useDispatch } from "react-redux";
-import { openedFigureInfoModal } from "../../../features/mobileSlice";
+import { openedFigureInfoModal } from "../../../features/modalControlSlice";
 
 interface MessageFromOtherProps extends MessageProps {
   historicalFigure: HistoricalFigure;

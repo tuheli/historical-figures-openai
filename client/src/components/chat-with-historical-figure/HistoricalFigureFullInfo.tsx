@@ -1,10 +1,12 @@
 import { Box, Dialog, DialogContent, Stack, Typography } from "@mui/material";
 import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { closedFigureInfoModal } from "../../features/mobileSlice";
+import { closedFigureInfoModal } from "../../features/modalControlSlice";
 
 export const HistoricalFigureFullInfo = () => {
-  const isOpen = useAppSelector((state) => state.mobile.isFigureInfoModalOpen);
+  const isOpen = useAppSelector(
+    (state) => state.modalControl.isFigureInfoModalOpen
+  );
 
   const { figure } = useHistoricalFigure();
   const dispatch = useAppDispatch();

@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import historicalFigureSlice from "../features/historicalFigureSlice";
 import { apiSlice } from "../features/apiSlice";
-import mobileSlice from "../features/mobileSlice";
+import modalControlSlice from "../features/modalControlSlice";
 
 export const store = configureStore({
   reducer: {
     historicalFigure: historicalFigureSlice,
-    mobile: mobileSlice,
+    modalControl: modalControlSlice,
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
   middleware: (getDefaultMiddleware) => {

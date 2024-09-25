@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const slice = createSlice({
-  name: "mobile",
+  name: "modalControl",
   initialState: {
     isSelectFigureModalOpen: false,
     isFigureInfoModalOpen: false,
