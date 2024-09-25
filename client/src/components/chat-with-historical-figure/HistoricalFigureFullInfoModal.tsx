@@ -3,7 +3,7 @@ import { useHistoricalFigure } from "../../hooks/useHistoricalFigure";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { closedFigureInfoModal } from "../../features/modalControlSlice";
 
-export const HistoricalFigureFullInfo = () => {
+export const HistoricalFigureFullInfoModal = () => {
   const isOpen = useAppSelector(
     (state) => state.modalControl.isFigureInfoModalOpen
   );

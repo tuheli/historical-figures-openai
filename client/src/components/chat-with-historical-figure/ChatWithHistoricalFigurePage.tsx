@@ -5,13 +5,13 @@ import { MessagesDrawerModal } from "./top-section/MessagesDrawerModal";
 import { Messages } from "./messages/Messages";
 import { MessageIsLoading } from "./messages/MessageIsLoading";
 import { SendMessage } from "./messages/SendMessage";
-import { HistoricalFigureFullInfo } from "./HistoricalFigureFullInfo";
+import { HistoricalFigureFullInfoModal } from "./HistoricalFigureFullInfoModal";
 
 export const ChatWithHistoricalFigurePage = () => {
   return (
     <>
       <MessagesDrawerModal />
-      <HistoricalFigureFullInfo />
+      <HistoricalFigureFullInfoModal />
       <Container maxWidth={"xl"} sx={{}}>
         <Box>
           <Stack
